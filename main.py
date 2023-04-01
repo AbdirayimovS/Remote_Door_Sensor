@@ -31,7 +31,7 @@ def main():
     dttime = datetime.utcfromtimestamp(last_time_update).strftime('%Y-%m-%d %H:%M:%S')
     st.header('Hello 🌎! Door Sensor Project ')
     st.metric("When Door was Opened last time?", dttime)
-    st.table(df.tail(5)
+    st.table(df.tail(5))
     st.balloons()
 #     st.line_chart(last_update)
         
