@@ -29,11 +29,11 @@ def main():
     last_update = df.tail(1)
     last_time_update = last_update.index[0]
     dttime = datetime.utcfromtimestamp(last_time_update).strftime('%Y-%m-%d %H:%M:%S')
-    st.header('Hello 🌎! Let`s check the Door Sensor Status')
-    st.metric("Door Status", dttime, list(last_update)[-1])
-    st.table(last_update)
+    st.header('Hello 🌎! Door Sensor Project ')
+    st.metric("When Door was Opened last time?", dttime)
+    st.table(df.tail(5)
     st.balloons()
-    st.line_chart(last_update)
+#     st.line_chart(last_update)
         
         
 
