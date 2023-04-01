@@ -37,9 +37,8 @@ def main():
         
         
 
-if __name__ == '__main__':
-    main()
-    time.sleep(1)
+main()
+time.sleep(1)
 
 
 
