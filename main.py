@@ -26,7 +26,6 @@ print(df)
 df.index = df.index.astype(int)
 last_update = df.tail(1)
 last_time_update = last_update.index[0]
-st.header("Is Door Opened?")
 
 print(last_update)
 #
@@ -34,18 +33,17 @@ dttime = datetime.utcfromtimestamp(last_time_update).strftime('%Y-%m-%d %H:%M:%S
 
 
 #-----------------------------------------------------#
+def main():
+    st.header('Hello 🌎! Let`s check the Door Sensor Status')
+    st.metric("Door Status", dttime, last_update[1])
+    if st.button('Update'):
+        st.header(dttime)
+        st.table(last_update)
+        st.balloons()
+        st.line_chart(last_update)
 
-st.header('Hello 🌎! Door Sensor of Sardor Abdiraimov')
-if st.button('Update'):
-    st.header(last_update)
-    # show the last update
-    st.header(dttime)
-    #visualize the true false data over the time in streamlit
-
-    st.line_chart(df)
-    st.table(df.tail(10))
-    st.balloons()
-
+if __name__ == '__main__':
+    main()
 
 
 
