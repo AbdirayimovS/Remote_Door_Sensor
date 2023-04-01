@@ -30,8 +30,7 @@ def main():
     last_time_update = last_update.index[0]
     dttime = datetime.utcfromtimestamp(last_time_update).strftime('%Y-%m-%d %H:%M:%S')
     st.header('Hello 🌎! Let`s check the Door Sensor Status')
-    st.markdown(last_update)
-    st.metric("Door Status", dttime, last_update)
+    st.metric("Door Status", dttime, list(last_update)[-1])
     st.table(last_update)
     st.balloons()
     st.line_chart(last_update)
